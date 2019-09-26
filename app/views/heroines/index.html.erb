@@ -1,9 +1,10 @@
 <h2>All Heroines</h2>
 
+<%= button_to "Add a Heroine", new_heroine_path, method: :get %> 
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%=link_to  "#{heroine.super_name}", heroine_path(heroine) %>
     </li>
     <br>
   <% end %>

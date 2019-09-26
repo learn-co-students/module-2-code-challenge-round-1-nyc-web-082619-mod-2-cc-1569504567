@@ -1,0 +1,6 @@
+<h1><%= "#{@heroine.name}, A.K.A #{@heroine.super_name}"%></h1>
+<br><br>
+<li><%= "Real Name: #{@heroine.name}" %></li><br>
+<li><%= "Superhero Name: #{@heroine.super_name}" %></li><br>
+<li><%= label_tag "power:" %>
+<%= link_to "#{@heroine.power.formatted_name}", power_path(@heroine.power) %>

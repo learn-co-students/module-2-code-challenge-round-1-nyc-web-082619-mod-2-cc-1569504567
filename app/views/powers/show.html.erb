@@ -1,0 +1,10 @@
+<h1><%= @power.formatted_name %></h1>
+<br><br>
+<div><%=label_tag "description:" %><br>
+    <p><%= @power.description.capitalize %></p>
+</div>
+<div><%=label_tag "Notable wielders:" %><br>
+    <ul> <%@power.heroines.each do |heroine|%>
+        <li><%= link_to "#{heroine.super_name}", heroine_path(heroine) %></li>
+    <% end %></ul>
+</div>

@@ -1,0 +1,18 @@
+<h1>Create a new Heroine</h1>
+<p>* indicates a required field</p>
+
+<%if @heroine.errors.any? %>
+    <ul><% @heroine.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+    <% end %></ul>
+<% end %>
+
+<%= form_for @heroine, url: heroines_path do |f| %>
+    <%= label_tag "Real Name:"%>
+    <%= f.text_field :name %><br>
+    <%= label_tag "* Superhero Name:"%>
+    <%= f.text_field :super_name %><br>
+    <%= label_tag "* Superpower:" %>
+    <%= collection_select :heroine, :power_id, @powers, :id, :formatted_name, :include_blank => true %><br>
+    <%= f.submit %>
+<% end %>
