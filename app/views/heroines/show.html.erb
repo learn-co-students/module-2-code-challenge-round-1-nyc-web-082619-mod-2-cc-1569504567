@@ -1,4 +1,6 @@
 <%= content_tag(:h1, @heroine.super_name)%></br>
 Name: <%= @heroine.name %></br>
 Power: 
-<%= link_to @power.name, power_path(@power)%>
+<%= link_to @power.name, power_path(@power)%></br></br>
+<%= link_to :edit, edit_heroine_path(@heroine)%> -
+<%= link_to :delete, heroine_path(@heroine), method: :delete%>

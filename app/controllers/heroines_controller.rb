@@ -16,6 +16,11 @@ class HeroinesController < ApplicationController
     @powers = Power.all
   end
 
+  def edit
+    @heroine = Heroine.find(params[:id])
+    @powers = Power.all
+  end
+
   def create
     @heroine = Heroine.new(heroine_params)
     if @heroine.save
@@ -24,6 +29,17 @@ class HeroinesController < ApplicationController
       flash.now[:message] = @heroine.errors.full_messages[0]
       self.new
       render :new
+    end
+  end
+
+  def update
+    @heroine = Heroine.find(params[:id])
+    if @heroine.update(heroine_params)
+      redirect_to heroine_path(@heroine)
+    else
+      flash.now[:message] = @heroine.errors.full_messages[0]
+      self.edit
+      render :edit
     end
   end
 

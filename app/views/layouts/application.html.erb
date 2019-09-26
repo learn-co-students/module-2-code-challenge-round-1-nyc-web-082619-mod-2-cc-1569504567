@@ -21,7 +21,7 @@
         <li><%= link_to :heroines, heroines_path%></li>
         <ul>
           <% Heroine.all.each do |heroine|%>
-            <li><%= link_to heroine.name, heroine_path(heroine)%></li>
+            <li><%= link_to heroine.super_name, heroine_path(heroine)%></li>
           <%end%>
         </ul>
       </ul>
