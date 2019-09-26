@@ -1,0 +1,8 @@
+NEW HEROINE
+
+<%=form_for @heroine do |h|%>
+    <li>Name: <%=h.text_field :name%></li>
+    <li>Super name:<%=h.text_field :super_name%></li>
+    <li> Select power:<%=h.collection_select :power_id, Power.all, :id, :name%>
+    <li><%=h.submit%></li>
+<%end%>
