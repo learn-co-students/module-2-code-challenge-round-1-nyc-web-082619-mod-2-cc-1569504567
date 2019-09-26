@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+ .index_heroine_pics{
+     display: flex;
+     flex-flow: row wrap;
+     justify-content: space-around
+ }
+
+ .show_heroine_pic{
+    display: flex;
+    justify-content: center
+}

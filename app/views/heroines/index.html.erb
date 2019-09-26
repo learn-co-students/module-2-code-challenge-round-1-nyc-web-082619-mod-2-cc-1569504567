@@ -32,10 +32,11 @@
 <br>
 
 <%= button_to "Add a Heroine", new_heroine_path, method: :get %> 
-<ul>
+<ul class="index_heroine_pics">
   <% @heroines.each do |heroine| %>
     <li>
-      <%=link_to  "#{heroine.super_name}", heroine_path(heroine) %>
+      <%= image_tag("#{heroine.image}", size: "450x300")%>
+      <%= link_to  "#{heroine.super_name}", heroine_path(heroine) %>
     </li>
     <br>
   <% end %>
