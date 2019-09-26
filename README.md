@@ -38,7 +38,7 @@ Read through the instructions to get a sense of the scope of this code challenge
 
 5. As a visitor to the website, I should be able to create a new heroine with her name and super name. Done
 
-6. The form should also allow each heroine to be created with **only one of the existing powers**.
+6. The form should also allow each heroine to be created with **only one of the existing powers**. Done
 
   ![A form for adding a new heroine](new_heroine_form.gif)
 
@@ -46,9 +46,9 @@ Read through the instructions to get a sense of the scope of this code challenge
 
 # BONUS TO BE COMPLETED IF EVERYTHING ELSE IS DONE
 
-**If you have reached this point, please `git add` and `git commit` before proceeding!**
+**If you have reached this point, please `git add` and git`git commit` before proceeding!**
 
-8. Add a filter to the index view of the heroines. This will allow the visitor to search for an existing power and display all the heroines with that power on the same view page.
+8. Add a filter to the index view of the heroines. This will allow the visitor to search for an existing power and display all the heroines with that power on the same view page.DONE
 
 ![Searching on the heroines route and finding heroines by a power](search_by_power.gif)
 
