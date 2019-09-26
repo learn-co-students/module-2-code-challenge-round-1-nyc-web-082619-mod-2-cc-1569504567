@@ -2,6 +2,17 @@
 <hr>
 <%=button_to "Create Heroine", new_heroine_path, method: :get %>
 <hr>
+
+<form action="/heroines" method="GET">
+<select name="heroines[power_id]">
+  <%@powers.each do |power|%>
+    <option name="power_id" value=<%=power.id%>> <%=power.name%> </option>
+  <%end%>
+</select>
+<input type="submit" value="Search">
+</form>
+<h1><%=@power_id if @power_id%></h1>
+<hr>
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
