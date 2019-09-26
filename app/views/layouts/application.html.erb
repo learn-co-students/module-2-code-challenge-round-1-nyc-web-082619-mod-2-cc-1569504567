@@ -3,12 +3,34 @@
   <head>
     <title>ImmersiveRailsAssessment</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+    <div id="sidebar">
+      <span> content_browser </span>
+      <ul>
+        <li><%= link_to :powers, powers_path%></li>
+        <ul>
+          <% Power.all.each do |power|%>
+            <li><%= link_to power.name, power_path(power)%></li>
+          <%end%>
+        </ul>
+      </ul>
+      <ul>
+        <li><%= link_to :heroines, heroines_path%></li>
+        <ul>
+          <% Heroine.all.each do |heroine|%>
+            <li><%= link_to heroine.name, heroine_path(heroine)%></li>
+          <%end%>
+        </ul>
+      </ul>
+      <ul>
+        <li><%= link_to :create_heroine, new_heroine_path%></li>
+      </ul>
+    </div>
+    <div id="main">
+      <%= yield %>
+    </div>
   </body>
 </html>

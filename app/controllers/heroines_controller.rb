@@ -27,6 +27,11 @@ class HeroinesController < ApplicationController
     end
   end
 
+  def delete
+    Heroine.find(params[:id]).destroy
+    redirect_to heroines_path
+  end
+
   private def heroine_params
     params.require(:heroine).permit(:id, :name, :super_name, :power_id)
   end

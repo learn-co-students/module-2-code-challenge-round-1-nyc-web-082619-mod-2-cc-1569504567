@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get "heroines/new", to: "heroines#new", as: "new_heroine"
   get "heroines/:id", to: "heroines#show", as: "heroine"
   post "heroines/new", to: "heroines#create"
+  delete "heroines/:id", to: "heroines#delete"
 end

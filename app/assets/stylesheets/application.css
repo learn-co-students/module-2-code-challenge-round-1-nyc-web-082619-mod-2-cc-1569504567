@@ -13,3 +13,37 @@
  *= require_tree .
  *= require_self
  */
+body {
+  display: grid;
+  grid-template-columns: 15% 1fr;
+}
+
+#main {
+  padding-inline-start: 1%;
+}
+#sidebar {
+  height: 100vh;
+  padding-block-start: 2%;
+  padding-inline-start: 2%;
+
+  border-right: 6px solid grey;
+  background-color: lightgrey;
+}
+
+#sidebar ul {
+  list-style: none; /* Remove list bullets */
+  padding: 0;
+  margin-block-end: 16px;
+}
+
+#sidebar ul li {
+  padding-inline-start: 16px;
+}
+#sidebar ul ul li {
+  padding-inline-start: 32px;
+}
+
+#sidebar li:before {
+  content: "-"; /* Insert content that looks like bullets */
+  padding-right: 8px;
+}
