@@ -1,0 +1,23 @@
+<h1> Create Heroine Page </h1>
+
+<%= form_for(@heroine) do |f| %>
+    <label>Name: </label><br>
+    <%= f.text_field :name %><br>
+    <label>Super Name: </label><br>
+    <%= f.text_field :super_name %><br>
+    <%= f.collection_select(:power_id, Power.all, :id, :name) %>
+    <%= f.submit "Create Heroine" %>
+<% end %>
+
+
+<% if @heroine.errors.any? %>
+  <div id="Not-unique-super-name">
+    <h2><%= pluralize(@heroine.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+<ul>
+    <% @heroine.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
