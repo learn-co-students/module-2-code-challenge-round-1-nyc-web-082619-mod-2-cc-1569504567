@@ -1,0 +1,7 @@
+<h1> <%=@hero.super_name%>'s Show Page! </h1>
+
+Name: <%=@hero.name%>
+<br>
+Super Name: <%=@hero.super_name%>
+<br>
+Power: <%=link_to @hero.power.name, power_path(@hero.power_id)%>
