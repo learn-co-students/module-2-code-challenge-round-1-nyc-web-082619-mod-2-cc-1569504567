@@ -1,8 +1,11 @@
 <h2>All Heroines</h2>
 <hr>
-<%=button_to "Create Heroine", new_heroine_path, method: :get %>
-<hr>
+<button class="ui right labeled icon button">
+  <i class="right arrow icon"></i>
+  <%=link_to "Create Heroine", new_heroine_path, method: :get %>
+</button>
 
+<hr>
 <form action="/heroines" method="GET">
 <select name="heroines[power_id]">
   <%@powers.each do |power|%>
@@ -11,13 +14,10 @@
 </select>
 <input type="submit" value="Search">
 </form>
-<h1><%=@power_id if @power_id%></h1>
 <hr>
-<ul>
-  <% @heroines.each do |heroine| %>
-    <li>
-      <%= link_to heroine.super_name, heroine_path(heroine)%>
-    </li>
-    <br>
-  <% end %>
-</ul>
+<% @heroines.each do |heroine| %>
+  <div class="ui card" style="padding: 5px 0px; text-align:center">
+    <%= link_to heroine.super_name, heroine_path(heroine)%>
+  </div>
+<% end %>
+

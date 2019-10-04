@@ -1,9 +1,11 @@
 class HeroinesController < ApplicationController
   def index
     @powers = Power.all 
-    power_id = "0"
-    power_id ||= params[:heroines][:power_id]
-     if power_id != "0"
+    if params[:heroines]
+      power_id = params[:heroines][:power_id] 
+    end
+
+     if power_id 
       @heroines = Power.find_by_id(power_id.to_i).heroines
       else
         @heroines = Heroine.all
